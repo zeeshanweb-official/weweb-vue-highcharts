@@ -7,5 +7,9 @@
   },
   "devDependencies": {
     "@weweb/cli": "latest"
+  },
+  "dependencies": {
+    "highcharts": "^11.4.1",
+    "highcharts-vue": "^2.0.1"
   }
 }
