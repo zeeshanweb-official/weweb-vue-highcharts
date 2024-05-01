@@ -29,7 +29,10 @@ export default {
     Chart,
     Highcharts,
   },
-  data() {
+  props: {
+    title: { type: Text, required: true },
+  },
+  data:function() {
     return {
       chart: {
         chart: {
@@ -44,7 +47,7 @@ export default {
         },
 
         title: {
-          text: " Electricity production in countries, grouped by continent",
+          text: this.props.title,
           align: "left",
         },
 
@@ -61,7 +64,7 @@ export default {
           allowDecimals: false,
           min: 0,
           title: {
-            text: "TWh",
+            text: this.props.title,
             skew3d: true,
             style: {
               fontSize: "16px",
@@ -109,9 +112,6 @@ export default {
         ],
       },
     };
-  },
-  props: {
-    content: { type: Object, required: true },
   },
   computed: {
     // populatedChartData() {
