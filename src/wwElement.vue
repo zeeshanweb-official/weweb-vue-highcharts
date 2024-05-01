@@ -23,7 +23,7 @@
 <script>
 import { Chart, Highcharts } from "highcharts-vue";
 export default {
-  name: "MyElement",
+  name: "vue-highcharts",
 
   components: {
     Chart,
