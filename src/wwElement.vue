@@ -120,6 +120,9 @@ export default {
   },
   mounted(){
     console.log('i am mounted')
+  },
+  updated(){
+    console.log(this.content)
   }
 };
 </script>
