@@ -7,7 +7,7 @@
     <!-- <Chart :options="pie1" /> -->
     <!-- <Chart :options="populatedChartData" v-if="populatedChartData" /> -->
     <!-- <Chart :options="donut3d" /> -->
-    <wwLayoutItemContext
+    <!-- <wwLayoutItemContext
       path="data"
       :data="chart"
       :index="index"
@@ -15,8 +15,8 @@
       v-for="(chart, index) in chart"
       :key="index"
     >
-      <Chart :options="chart" />
-    </wwLayoutItemContext>
+  </wwLayoutItemContext> -->
+  <Chart :options="chart" />
   </div>
 </template>
 
@@ -111,7 +111,7 @@ export default {
     };
   },
   props: {
-    title: { type: Text, required: true },
+    content: { type: Object, required: true },
   },
   computed: {
     // populatedChartData() {
@@ -122,9 +122,9 @@ export default {
     console.log('i am mounted')
   },
   watch:{
-    title: function (val) {
-      console.log(this.props.title)
-      this.chart.title.text=this.props.title
+    content: function (val) {
+      console.log(this.props)
+      // this.chart.title.text=this.props.title
     },
   }
 };
