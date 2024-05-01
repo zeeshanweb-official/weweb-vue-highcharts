@@ -33,7 +33,7 @@ export default {
   props: {
     title: { type: Text, required: true },
   },
-  data:function() {
+  data:function(instance) {
     return {
       chart: {
         chart: {
@@ -48,7 +48,7 @@ export default {
         },
 
         title: {
-          text: this.props.title,
+          text: instance.title,
           align: "left",
         },
 
@@ -65,7 +65,7 @@ export default {
           allowDecimals: false,
           min: 0,
           title: {
-            text: this.props.title,
+            text: 'this.props.title',
             skew3d: true,
             style: {
               fontSize: "16px",
