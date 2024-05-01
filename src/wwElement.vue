@@ -7,7 +7,7 @@
     <!-- <Chart :options="pie1" /> -->
     <!-- <Chart :options="populatedChartData" v-if="populatedChartData" /> -->
     <!-- <Chart :options="donut3d" /> -->
-    <wwLayoutItemContext
+    <!-- <wwLayoutItemContext
       path="data"
       :data="chart"
       :index="index"
@@ -15,8 +15,9 @@
       v-for="(chart, index) in chart"
       :key="index"
     >
-      <Chart :options="chart" />
-    </wwLayoutItemContext>
+      
+    </wwLayoutItemContext> -->
+    <Chart :options="chart" />
   </div>
 </template>
 
