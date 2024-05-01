@@ -12,7 +12,7 @@
       :data="chart"
       :index="index"
       :item="null"
-      v-for="(chart, index) in content.data"
+      v-for="(chart, index) in chart"
       :key="index"
     >
       <Chart :options="chart" />
@@ -31,7 +31,7 @@ export default {
   },
   data() {
     return {
-      chart3d: {
+      chart: {
         chart: {
           type: "column",
           options3d: {
@@ -121,8 +121,10 @@ export default {
   mounted(){
     console.log('i am mounted')
   },
-  updated(){
-    console.log(this.content)
+  watch:{
+    props: function (val) {
+      console.log(props)
+    },
   }
 };
 </script>
