@@ -22,32 +22,5 @@ export default {
       },
       /* wwEditor:end */
     },
-    data: {
-      label: {
-        en: "Grid data",
-      },
-      type: "Info",
-      options: {
-        text: { en: "Bind your data" },
-      },
-      bindable: "repeatable",
-
-      section: "settings",
-      /* wwEditor:start */
-      bindingValidation: {
-        validations: [
-          {
-            type: "array",
-          },
-          {
-            type: "object",
-          },
-        ],
-        tooltip:
-          "A collection or an array of data: \n\n`myCollection` or `[{}, {}, ...]`",
-      },
-      /* wwEditor:end */
-    },
-
   },
 };
