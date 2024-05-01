@@ -7,7 +7,7 @@
     <!-- <Chart :options="pie1" /> -->
     <!-- <Chart :options="populatedChartData" v-if="populatedChartData" /> -->
     <!-- <Chart :options="donut3d" /> -->
-    <!-- <wwLayoutItemContext
+    <wwLayoutItemContext
       path="data"
       :data="chart"
       :index="index"
@@ -15,9 +15,8 @@
       v-for="(chart, index) in chart"
       :key="index"
     >
-      
-    </wwLayoutItemContext> -->
-    <Chart :options="chart" />
+      <Chart :options="chart" />
+    </wwLayoutItemContext>
   </div>
 </template>
 
@@ -30,10 +29,7 @@ export default {
     Chart,
     Highcharts,
   },
-  props: {
-    title: { type: Text, required: true },
-  },
-  data:function(instance) {
+  data() {
     return {
       chart: {
         chart: {
@@ -48,7 +44,7 @@ export default {
         },
 
         title: {
-          text: instance.title,
+          text: 'title of the graph',
           align: "left",
         },
 
@@ -65,7 +61,7 @@ export default {
           allowDecimals: false,
           min: 0,
           title: {
-            text: 'this.props.title',
+            text: this.props.title,
             skew3d: true,
             style: {
               fontSize: "16px",
@@ -114,6 +110,9 @@ export default {
       },
     };
   },
+  props: {
+    title: { type: Text, required: true },
+  },
   computed: {
     // populatedChartData() {
     //   return this.content.chartData.chart3d;
@@ -123,8 +122,9 @@ export default {
     console.log('i am mounted')
   },
   watch:{
-    props: function (val) {
-      console.log(props)
+    title: function (val) {
+      console.log(this.props.title)
+      this.chart.title.text=this.props.title
     },
   }
 };
